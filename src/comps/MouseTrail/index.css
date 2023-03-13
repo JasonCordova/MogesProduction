@@ -1,0 +1,38 @@
+.cursor-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    mix-blend-mode: difference;
+}
+
+body:hover #cursor {
+    opacity: 1;
+}
+  
+#cursor {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+    opacity: 0;
+    transition: padding .05s ease-out, opacity .2s ease-out, width .2s ease-out, height .2s ease-out;
+}
+
+#cursor.interact {width: 36px; height: 36px;}
+
+body:active #cursor {padding: 8px;}

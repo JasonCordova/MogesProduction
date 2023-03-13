@@ -1,0 +1,54 @@
+@keyframes pulse {
+
+    0% {
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        filter: blur(10px);
+    }
+    60% {
+        width: calc(100% + 24px);
+        height: calc(100% + 24px);
+        filter: blur(20px);
+    }
+    100% {
+        width: calc(100% + 8px);
+        height: calc(100% + 8px);
+        filter: blur(10px);
+    }
+
+}
+
+.video-wrapper {    
+    width: 41.6666667vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 100%;
+    filter: blur(0px);
+}
+
+.video-container {
+    position: absolute;
+    z-index: 0;
+    filter: blur(100px);
+    opacity: .5;
+}
+
+.video-container::before {
+    content: "";
+    display: block;
+    width: calc(100% + 8px);
+    height: calc(100% + 8px);
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    background-color: #131214;
+    border-radius: 100%;
+    filter: blur(10px);
+    animation: pulse 3s infinite;  
+}
+
+.video-wrapper video {height: 41.6666667vw;}
